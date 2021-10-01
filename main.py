@@ -35,7 +35,13 @@ model.add(Dense(units=1, activation='sigmoid')) # bool value to return whether t
 # One unit will mean that we wonly get one num back, sophisticated models for other tasks often have multiple units in the final layer
 
 
-model.compile(loss='binary_crossentropy', optimizer='sgd', metrics='accuracy')
+
+model.compile(loss='binary_crossentropy', optimizer='sgd', metrics='accuracy') # tell tff how to train, what metrics, what optimizer
+# loss: bias of our estimation
+# optimizer: how to search
+# metrics: evaluate how well our model is performing
+
+
 
 # 3. Fit, Predict and Evalute
 model.fit(X_train, y_train, epochs=50, batch_size=32)
